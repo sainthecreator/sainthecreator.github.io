@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THANK GOD FOR DEATH</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+background:white;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+}
+
+/* TITLE */
+
+.title{
+font-family:'Anton', sans-serif;
+font-size:60px;
+letter-spacing:3px;
+margin-top:40px;
+}
+
+/* IMAGE */
+
+.cover img{
+width:280px;
+max-width:80%;
+margin-top:20px;
+}
+
+/* JAPANESE TEXT */
+
+.jp{
+font-family:'Anton', sans-serif;
+margin-top:10px;
+font-size:28px;
+letter-spacing:2px;
+}
+
+/* MENU */
+
+.menu{
+margin-top:40px;
+font-family:'Anton', sans-serif;
+font-size:24px;
+}
+
+.menu a{
+text-decoration:none;
+color:black;
+margin:0 25px;
+}
+
+.menu a:hover{
+opacity:0.6;
+}
+
+/* DESCRIPTION */
+
+.description{
+margin-top:120px;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+padding:30px;
+line-height:1.6;
+font-size:18px;
+}
+
+/* STARS */
+
+.star{
+position:fixed;
+font-size:70px;
+color:#c4a484;
+opacity:0.8;
+}
+
+.l1{left:20px; top:150px;}
+.l2{left:20px; top:350px;}
+.l3{left:20px; bottom:120px;}
+
+.r1{right:20px; top:150px;}
+.r2{right:20px; top:350px;}
+.r3{right:20px; bottom:120px;}
+
+/* MOBILE */
+
+@media (max-width:700px){
+
+.title{
+font-size:42px;
+}
+
+.jp{
+font-size:22px;
+}
+
+.menu{
+font-size:20px;
+}
+
+.star{
+font-size:45px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- STARS -->
+
+<div class="star l1">★</div>
+<div class="star l2">★</div>
+<div class="star l3">★</div>
+
+<div class="star r1">★</div>
+<div class="star r2">★</div>
+<div class="star r3">★</div>
+
+
+<!-- TITLE -->
+
+<div class="title">
+THANK GOD FOR DEATH
+</div>
+
+
+<!-- IMAGE -->
+
+<div class="cover">
+<img src="cd.png">
+</div>
+
+
+<!-- JAPANESE TGFD -->
+
+<div class="jp">
+ティージーエフディー
+</div>
+
+
+<!-- MENU -->
+
+<div class="menu">
+
+<a href="https://kunaki.com/msales.ASP?Publisherid=225897&PP=1">MUSIC</a>
+
+<a href="#description">INFO</a>
+
+<a href="https://sainty.es/">STORE</a>
+
+</div>
+
+
+<!-- DESCRIPTION SECTION -->
+
+<div id="description" class="description">
+
+<p>
+
+PUT YOUR CUSTOM ALBUM DESCRIPTION HERE.
+
+You can write anything you want here about the project,
+the concept, release info, or credits.
+
+This section will appear when someone clicks INFO.
+
+</p>
+
+</div>
+
+</body>
+
+</html>
