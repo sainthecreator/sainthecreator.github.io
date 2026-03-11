@@ -1,215 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>THANK GOD FOR DEATH</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-
 <style>
+/* PASSWORD OVERLAY */
+#passwordOverlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#111 url('banner1.png') no-repeat center center;
+  background-size:cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:9999;
+  color:white;
+  font-family:'Anton', sans-serif;
+}
 
+#passwordOverlay input{
+  padding:12px 16px;
+  font-size:16px;
+  margin-bottom:20px;
+  border:none;
+  outline:none;
+  border-radius:0;
+  text-align:center;
+}
+
+#passwordOverlay button{
+  padding:12px 24px;
+  font-size:16px;
+  background:#4CAF50;
+  color:white;
+  border:none;
+  cursor:pointer;
+  border-radius:0;
+}
+
+#passwordOverlay button:hover{
+  opacity:0.8;
+}
+
+/* STARS ON OVERLAY */
+#passwordOverlay .star{
+  position:absolute;
+  font-size:50px;
+  color:#c4a484;
+  opacity:0.8;
+}
+
+#passwordOverlay .l1{left:20px; top:50px;}
+#passwordOverlay .l2{left:20px; top:200px;}
+#passwordOverlay .l3{left:20px; bottom:50px;}
+#passwordOverlay .r1{right:20px; top:50px;}
+#passwordOverlay .r2{right:20px; top:200px;}
+#passwordOverlay .r3{right:20px; bottom:50px;}
+
+/* HIDE MAIN SITE UNTIL PASSWORD */
+#mainContent{
+  display:none;
+}
+
+/* MAIN SITE STYLES */
 body{
-margin:0;
-background:white;
-font-family:Arial, Helvetica, sans-serif;
-text-align:center;
+  margin:0;
+  background:white;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align:center;
 }
 
 /* TITLE */
-
 .title{
-font-family:'Anton', sans-serif;
-font-size:60px;
-letter-spacing:3px;
-margin-top:40px;
+  font-family:'Anton', sans-serif;
+  font-size:60px;
+  letter-spacing:3px;
+  margin-top:40px;
 }
 
 /* IMAGE */
-
 .cover img{
-width:280px;
-max-width:80%;
-margin-top:20px;
+  width:280px;
+  max-width:80%;
+  margin-top:20px;
 }
 
-/* JAPANESE TEXT */
-
+/* JAPANESE */
 .jp{
-font-family:'Anton', sans-serif;
-margin-top:10px;
-font-size:28px;
-letter-spacing:2px;
+  font-family:'Anton', sans-serif;
+  margin-top:10px;
+  font-size:28px;
+  letter-spacing:2px;
 }
 
 /* MENU */
-
 .menu{
-margin-top:40px;
-font-family:'Anton', sans-serif;
-font-size:24px;
+  margin-top:40px;
+  font-family:'Anton', sans-serif;
+  font-size:24px;
 }
-
 .menu a{
-text-decoration:none;
-color:black;
-margin:0 25px;
+  text-decoration:none;
+  color:black;
+  margin:0 25px;
 }
-
 .menu a:hover{
-opacity:0.6;
+  opacity:0.6;
 }
 
 /* DESCRIPTION */
-
 .description{
-margin-top:120px;
-max-width:700px;
-margin-left:auto;
-margin-right:auto;
-padding:30px;
-line-height:1.6;
-font-size:18px;
+  margin-top:120px;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+  padding:30px;
+  line-height:1.6;
+  font-size:18px;
+}
+
+/* VIDEO BELOW DESCRIPTION */
+.video-container{
+  margin-top:50px;
+  text-align:center;
+}
+.video-container video{
+  width:80%;
+  max-width:800px;
+  height:auto;
+  border-radius:8px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
 
 /* SIDE BANNERS */
-
 .side-banner{
-position:fixed;
-top:0;
-width:110px;
-height:100vh;
-opacity:0.65;
-overflow:hidden;
+  position:fixed;
+  top:0;
+  width:110px;
+  height:100vh;
+  opacity:0.65;
+  overflow:hidden;
 }
-
 .side-banner img{
-width:100%;
-height:100%;
-object-fit:fill;
+  width:100%;
+  height:100%;
+  object-fit:fill;
 }
-
-.left-banner{
-left:0;
-}
-
-.right-banner{
-right:0;
-}
+.left-banner{ left:0; }
+.right-banner{ right:0; }
 
 /* STARS */
-
 .star{
-position:fixed;
-font-size:70px;
-color:#c4a484;
-opacity:0.8;
+  position:fixed;
+  font-size:70px;
+  color:#c4a484;
+  opacity:0.8;
 }
-
 .l1{left:140px; top:150px;}
 .l2{left:140px; top:350px;}
 .l3{left:140px; bottom:120px;}
-
 .r1{right:140px; top:150px;}
 .r2{right:140px; top:350px;}
 .r3{right:140px; bottom:120px;}
 
 /* MOBILE */
-
 @media (max-width:700px){
-
-.title{
-font-size:42px;
+  .title{ font-size:36px; }
+  .jp{ font-size:20px; }
+  .menu{ display:flex; flex-direction:column; gap:15px; }
+  .star{ font-size:35px; }
+  .l1{left:10px; top:120px;} .l2{left:10px; top:260px;} .l3{left:10px; bottom:100px;}
+  .r1{right:10px; top:120px;} .r2{right:10px; top:260px;} .r3{right:10px; bottom:100px;}
+  .side-banner{ display:none; }
+  .cover img{ width:220px; max-width:90%; }
+  .video-container video{ width:95%; }
 }
-
-.jp{
-font-size:22px;
-}
-
-.menu{
-font-size:20px;
-}
-
-.star{
-font-size:45px;
-}
-
-.side-banner{
-display:none;
-}
-
-}
-
 </style>
-
 </head>
-
 <body>
 
-<!-- SIDE BANNERS -->
+<!-- PASSWORD OVERLAY -->
+<div id="passwordOverlay">
+  <div class="star l1">★</div>
+  <div class="star l2">★</div>
+  <div class="star l3">★</div>
+  <div class="star r1">★</div>
+  <div class="star r2">★</div>
+  <div class="star r3">★</div>
 
-<div class="side-banner left-banner">
-<img src="banner1.png">
+  <h1>Enter Password</h1>
+  <input type="password" id="passwordInput" placeholder="Password">
+  <button onclick="checkPassword()">ENTER</button>
 </div>
 
-<div class="side-banner right-banner">
-<img src="banner2.png">
-</div>
+<script>
+function checkPassword(){
+  const input = document.getElementById('passwordInput').value;
+  if(input === "TGFD"){
+    document.getElementById('passwordOverlay').style.display='none';
+    document.getElementById('mainContent').style.display='block';
+  } else {
+    alert("Incorrect password");
+  }
+}
+</script>
 
-<!-- STARS -->
+<!-- MAIN WEBSITE CONTENT -->
+<div id="mainContent">
 
-<div class="star l1">★</div>
-<div class="star l2">★</div>
-<div class="star l3">★</div>
+  <!-- BANNERS -->
+  <div class="side-banner left-banner"><img src="banner1.png"></div>
+  <div class="side-banner right-banner"><img src="banner2.png"></div>
 
-<div class="star r1">★</div>
-<div class="star r2">★</div>
-<div class="star r3">★</div>
+  <!-- STARS -->
+  <div class="star l1">★</div>
+  <div class="star l2">★</div>
+  <div class="star l3">★</div>
+  <div class="star r1">★</div>
+  <div class="star r2">★</div>
+  <div class="star r3">★</div>
 
-<!-- TITLE -->
+  <!-- TITLE -->
+  <div class="title">THANK GOD FOR DEATH</div>
 
-<div class="title">
-THANK GOD FOR DEATH
-</div>
+  <!-- COVER -->
+  <div class="cover"><img src="cd.png"></div>
 
-<!-- IMAGE -->
+  <!-- JAPANESE -->
+  <div class="jp">ティージーエフディー</div>
 
-<div class="cover">
-<img src="cd.png">
-</div>
+  <!-- MENU -->
+  <div class="menu">
+    <a href="https://kunaki.com/msales.ASP?Publisherid=225897&PP=1">MUSIC</a>
+    <a href="#description">INFO</a>
+    <a href="https://sainty.es/">STORE</a>
+  </div>
 
-<!-- JAPANESE -->
+  <!-- DESCRIPTION -->
+  <div id="description" class="description">
+    <p>
+    SAINT | THANK GOD FOR DEATH
+    <br><br>
+    SAINT is an artist driven by self-belief, vision, and fearless creativity. He represents a mindset where confidence is everything and bold ideas are embraced, even when they seem unrealistic to others. Turning emotion into sound and identity into art, SAINT creates with purpose and intention, always evolving and never chasing approval. This CD reflects his perspective on growth, transformation, and trusting your inner vision — letting go of limits, embracing change, and becoming who you see in your mind before the world does.
+    </p>
+  </div>
 
-<div class="jp">
-ティージーエフディー
-</div>
-
-<!-- MENU -->
-
-<div class="menu">
-
-<a href="https://kunaki.com/msales.ASP?Publisherid=225897&PP=1">MUSIC</a>
-
-<a href="#description">INFO</a>
-
-<a href="https://sainty.es/">STORE</a>
-
-</div>
-
-<!-- DESCRIPTION -->
-
-<div id="description" class="description">
-
-<p>
-
-SAINT | THANK GOD FOR DEATH
-
-SAINT is an artist driven by self-belief, vision, and fearless creativity. He represents a mindset where confidence is everything and bold ideas are embraced, even when they seem unrealistic to others. Turning emotion into sound and identity into art, SAINT creates with purpose and intention, always evolving and never chasing approval. This CD reflects his perspective on growth, transformation, and trusting your inner vision — letting go of limits, embracing change, and becoming who you see in your mind before the world does.
-
-</p>
+  <!-- VIDEO BELOW DESCRIPTION -->
+  <div class="video-container">
+    <video id="videoPlayer" controls autoplay>
+      <source src="yourvideo.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
 
 </div>
 
